@@ -1,0 +1,44 @@
+/* Reset default margin and padding for body and HTML */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Create a flex container for vertical and horizontal centering */
+.centered-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%;
+}
+
+/* Style the centered div */
+#earth {
+  width: 500px; /* Set your desired width */
+  height: 300px; /* Set your desired height */
+  background-color: rgb(112, 17, 17);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  cursor: url("/img/cursor_small.png") 8 8, pointer;
+}
+
+.whole {
+  background-color: black;
+  width: 70px; /* Set your desired width */
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.worm {
+  height: 20px;
+
+  clip: rect(10px, 1000px, 50px, 20px);
+}
