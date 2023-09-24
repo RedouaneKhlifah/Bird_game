@@ -1,44 +1,174 @@
-/* Reset default margin and padding for body and HTML */
-html,
-body {
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
+  overflow: hidden;
+  cursor: url("/img/sniperview2.png"), auto;
 }
 
-/* Create a flex container for vertical and horizontal centering */
-.centered-container {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100%;
-}
-
-/* Style the centered div */
-#earth {
-  width: 500px; /* Set your desired width */
-  height: 300px; /* Set your desired height */
-  background-color: rgb(112, 17, 17);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  justify-items: center;
-  align-items: center;
-  cursor: url("/img/cursor_small.png") 8 8, pointer;
-}
-
-.whole {
+.bg {
+  position: relative;
+  background-image: url("img/bg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  cursor: url("/img/cursor-worm_small.png"), auto;
+  z-index: 300;
   background-color: black;
-  width: 70px; /* Set your desired width */
-  height: 70px;
-  border-radius: 50%;
+}
+.treesContainer {
   display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 157px;
+}
+
+.tree {
+  width: 250px;
+  /* height: 300PX; */
+}
+
+.treeContainer {
+  position: relative;
+}
+.bareScore {
+}
+
+.sniper-container {
+  position: absolute;
+  bottom: -4vh;
+  right: -25vw;
+  z-index: 10;
+}
+.sniper {
+  width: 50%;
+  animation: breathe 2s linear infinite;
+}
+
+.sniperView-container {
+  position: absolute; /* Set position to relative or another appropriate value */
+  z-index: 10;
+  bottom: 100px;
+  right: 200px;
+}
+
+.sniperView {
+  width: 30%;
+  z-index: 20;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05); /* Increase the scale for "breathing out" effect */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.fox {
+  width: 55px;
+  position: absolute;
+  bottom: 3px;
+  left: 95px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
+  display: none; /* Initially hidden */
+  z-index: 100; /* Place the overlay above other content */
+  /* Make it non-interactive */
+}
+
+.show {
+  display: block;
+}
+
+.containerLogin,
+.containerRegister {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 380px;
+  transform: translate(-50%, -50%);
+  height: 390px;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+.innerConatiner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
   justify-content: center;
   align-items: center;
 }
 
-.worm {
-  height: 20px;
+.input {
+  width: 90%;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid rgb(255, 255, 255, 0.2);
+  font-size: 14px;
+  padding-left: 15px;
+}
+.input::placeholder {
+  color: white;
+  font-size: 14px;
+}
 
-  clip: rect(10px, 1000px, 50px, 20px);
+.title {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: brown;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.Button {
+  background-color: brown;
+  width: 90%;
+  border-radius: 15px;
+  height: 40px;
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+.worm {
+  position: absolute;
+  top: 10px;
+  width: 10%;
+  left: 25%;
+}
+
+.userScore {
+  display: flex;
+  column-gap: 10px;
+  color: rgb(0, 0, 0);
+  padding-left: 10px;
+}
+
+.userName,
+.score {
+  font-weight: bolder;
+  font-size: 20px;
 }
