@@ -3,18 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="centered-container">
-      <div>
-        <div class="wormImgContainer">
-          <img class="worm" src="/img/worm.png" alt="" />
+    <div class="bg">
+      <div class="overlay show" id="overlay">
+        <div class="containerLogin">
+          <div class="innerConatiner">
+            <h1 class="title">Sniper game</h1>
+            <input
+              class="input"
+              type="text"
+              placeholder="email"
+              id="login_email"
+            />
+            <input
+              class="input"
+              type="password"
+              placeholder="Password"
+              id="login_password"
+            />
+            <button id="login" class="Button">login</button>
+            <button id="goToregister" class="Button">register</button>
+            <button class="Button">how to Play</button>
+          </div>
         </div>
-        <div id="earth"></div>
+        <div class="containerRegister hide">
+          <div class="innerConatiner">
+            <h1 class="title">Sniper game</h1>
+            <input class="input" type="text" id="email" placeholder="email" />
+            <input class="input" type="text" placeholder="Name" id="name" />
+            <input
+              class="input"
+              type="password"
+              placeholder="Password"
+              id="password"
+            />
+            <button id="register" class="Button">register</button>
+            <button id="GoTologin" class="Button">login</button>
+            <button class="Button">how to Play</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay Content -->
+
+      <div class="treesContainer">
+        <div class="bareScore"></div>
       </div>
     </div>
-    <script src="scirpte.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
